@@ -35,6 +35,16 @@ jobs:
           remove-android: 'true'
           remove-dotnet: 'true'
           remove-haskell: 'true'
+
+      - name: Free some more space
+        with:
+          docker rmi `docker images -q`
+          sudo rm -rf /usr/share/dotnet /etc/mysql /etc/php /etc/sudo apt/sources.list.d
+          sudo apt -y autoremove --purge
+          sudo apt -y autoclean
+          sudo apt clean
+          rm --recursive --force "$AGENT_TOOLSDIRECTORY"
+          df -h
           
       - name: Checkout repository
         uses: actions/checkout@v3
