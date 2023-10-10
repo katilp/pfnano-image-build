@@ -29,6 +29,13 @@ jobs:
       packages: write
 
     steps:
+      - name: Free some disk space
+        uses: AdityaGarg8/remove-unwanted-software@v1
+        with:
+          remove-android: 'true'
+          remove-dotnet: 'true'
+          remove-haskell: 'true'
+          
       - name: Checkout repository
         uses: actions/checkout@v3
 
