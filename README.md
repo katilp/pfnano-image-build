@@ -1,6 +1,6 @@
-# PFNano conatainer image
+# CMSSW PFNanoProducer container image
 
-This container image had been built to investigate whether an increased timeout value solves the problem observed with the file access from eospublic.
+This container image had been built to investigate whether an increased XRootD timeout value (in `CMSSW Utilities/XrdAdaptor/src/XrdRequestManager.h`) solves the problem observed with the file access from eospublic.
 
 It has the PFNano code installed from https://github.com/cms-opendata-analyses/PFNanoProducerTool and compiled. See [Dockerfile](Dockerfile).
 
