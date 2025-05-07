@@ -38,6 +38,7 @@ jobs:
 
       - name: Free some more space
         run: |
+          df -h
           docker rmi `docker images -q`
           sudo rm -rf /usr/share/dotnet /etc/mysql /etc/php /etc/sudo apt/sources.list.d
           sudo apt -y autoremove --purge
